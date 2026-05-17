@@ -5,7 +5,7 @@ import DashBoard from './components/DashBoard';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       {/* Premium Glassmorphic Top Navigation Header */}
       <nav className="app-nav">
         <div className="nav-brand">
