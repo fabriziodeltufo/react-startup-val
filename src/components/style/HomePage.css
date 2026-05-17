@@ -159,6 +159,7 @@
   resize: none;
   outline: none;
   padding: 0;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 
