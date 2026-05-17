@@ -24,11 +24,11 @@ function HomePage() {
             </span>
             <span className="badge-text">SYSTEM ONLINE</span>
           </div>
-          
+
           <h1 className="hero-title">
             STARTUP VALIDATION
           </h1>
-          
+
           <p className="hero-subtitle">
             Validate your business idea in seconds using high-fidelity market data, competitive intelligence, and predictive failure analysis.
           </p>
@@ -56,8 +56,8 @@ function HomePage() {
           </form>
 
           {/* Decorative HUD elements */}
-          <div className="hud-line-left"></div>
-          <div className="hud-line-right"></div>
+          {/* <div className="hud-line-left"></div> */}
+          {/* <div className="hud-line-right"></div> */}
         </section>
       </main>
 
