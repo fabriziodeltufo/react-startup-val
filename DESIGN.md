@@ -1,18 +1,18 @@
 ---
-name: Techno-Minimalist Validator
+name: Start Up Validator Design
 colors:
   surface: '#131313'
   surface-dim: '#131313'
-  surface-bright: '#3a3939'
+  surface-bright: '#393939'
   surface-container-lowest: '#0e0e0e'
-  surface-container-low: '#1c1b1b'
-  surface-container: '#201f1f'
+  surface-container-low: '#1b1b1b'
+  surface-container: '#1f1f1f'
   surface-container-high: '#2a2a2a'
-  surface-container-highest: '#353534'
-  on-surface: '#e5e2e1'
+  surface-container-highest: '#353535'
+  on-surface: '#e2e2e2'
   on-surface-variant: '#b9caca'
-  inverse-surface: '#e5e2e1'
-  inverse-on-surface: '#313030'
+  inverse-surface: '#e2e2e2'
+  inverse-on-surface: '#303030'
   outline: '#849495'
   outline-variant: '#3a494a'
   surface-tint: '#00dce5'
@@ -22,9 +22,9 @@ colors:
   on-primary-container: '#006c71'
   inverse-primary: '#00696e'
   secondary: '#c8c6c5'
-  on-secondary: '#313030'
+  on-secondary: '#303030'
   secondary-container: '#474746'
-  on-secondary-container: '#b7b5b4'
+  on-secondary-container: '#b6b5b4'
   tertiary: '#fff9f0'
   on-tertiary: '#3a3000'
   tertiary-container: '#ffdb3f'
@@ -37,17 +37,17 @@ colors:
   primary-fixed-dim: '#00dce5'
   on-primary-fixed: '#002021'
   on-primary-fixed-variant: '#004f53'
-  secondary-fixed: '#e5e2e1'
+  secondary-fixed: '#e4e2e1'
   secondary-fixed-dim: '#c8c6c5'
-  on-secondary-fixed: '#1c1b1b'
+  on-secondary-fixed: '#1b1c1b'
   on-secondary-fixed-variant: '#474746'
   tertiary-fixed: '#ffe16c'
   tertiary-fixed-dim: '#e7c427'
   on-tertiary-fixed: '#221b00'
   on-tertiary-fixed-variant: '#544600'
   background: '#131313'
-  on-background: '#e5e2e1'
-  surface-variant: '#353534'
+  on-background: '#e2e2e2'
+  surface-variant: '#353535'
 typography:
   display-lg:
     fontFamily: Space Grotesk
@@ -132,7 +132,7 @@ The design system follows a strict **4px baseline grid** to ensure mathematical 
 
 In this dark-only environment, depth is achieved through **Luminance and Outlines** rather than traditional soft shadows.
 
-- **Tonal Layers:** Objects closer to the user are lighter in color. Level 0 is Black (`#000000`). Level 1 is Dark Grey (`#0D0D0D`).
+- **Tonal Layers:** Objects closer to the user are lighter in color. Level 0 is Black (`#000000`), Level 1 is Dark Grey (`#0D0D0D`).
 - **The "Scanner" Border:** Instead of shadows, use 1px solid borders (`#1F1F1F`). For active or focused states, these borders transition to the Primary Electric Cyan with a subtle 4px outer glow (0.2 opacity).
 - **Glassmorphism:** For overlays or navigation bars, use a heavy backdrop blur (20px) with a semi-transparent surface (`#0A0A0A` at 0.8 opacity) to maintain a sense of layered complexity.
 
