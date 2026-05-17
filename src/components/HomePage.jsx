@@ -38,7 +38,7 @@ function HomePage() {
         <section className="input-section">
           <form onSubmit={handleValidate} className="input-card">
             <div className="input-body">
-              <label className="sr-only" htmlFor="idea-input">Describe your business idea</label>
+              <label className="sr-only" htmlFor="idea-input">Describe your business idea here:</label>
               <textarea
                 id="idea-input"
                 className="textarea-input"
