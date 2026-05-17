@@ -71,9 +71,19 @@
 
 @media (max-width: 1024px) {
   .dashboard-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .gauge-card,
+  .difficulty-card,
+  .section-wrapper,
+  .verdict-card {
+    grid-column: auto !important;
+    width: 100% !important;
   }
 }
+
 
 /* Success Score Card */
 .gauge-card {
@@ -547,3 +557,64 @@
   font-weight: 500;
   margin-top: 4px;
 }
+
+@media (max-width: 480px) {
+  .dashboard-main {
+    padding: 24px 16px 96px 16px;
+  }
+  .dashboard-header {
+    margin-bottom: 24px;
+    padding-left: 16px;
+  }
+  .gauge-card {
+    padding: 24px 16px;
+  }
+  .gauge-svg-container {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 16px;
+  }
+  .gauge-val {
+    font-size: 36px;
+  }
+  .score-breakdown {
+    gap: 8px;
+  }
+  .breakdown-box {
+    padding: 8px;
+  }
+  .breakdown-val {
+    font-size: 18px;
+  }
+  .difficulty-card {
+    padding: 24px 16px;
+  }
+  .difficulty-grid {
+    gap: 32px;
+  }
+  .persona-card {
+    padding: 24px 16px;
+  }
+  .persona-name {
+    font-size: 20px;
+  }
+  .benchmarking-table th,
+  .benchmarking-table td {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .competitor-name {
+    font-size: 18px;
+  }
+  .verdict-card {
+    padding: 24px 16px;
+    gap: 16px;
+  }
+  .verdict-go {
+    font-size: 72px;
+  }
+  .verdict-text {
+    font-size: 20px;
+  }
+}
+
