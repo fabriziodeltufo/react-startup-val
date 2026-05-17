@@ -1,0 +1,549 @@
+/* DashBoard.css - Replicating Stitch Dashboard layout exactly in Vanilla CSS */
+
+.dashboard-container {
+  background-color: #131313;
+  min-height: calc(100vh - 73px); /* Excludes glassmorphic header height */
+  color: #e5e2e1;
+  font-family: 'Geist', sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 32px 128px 32px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Header Section */
+.dashboard-header {
+  margin-bottom: 64px;
+  border-left: 2px solid #00f5ff;
+  padding-left: 32px;
+  text-align: left;
+}
+
+.header-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #00f5ff;
+  letter-spacing: 0.2em;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  max-width: 768px;
+}
+
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 24px;
+  }
+}
+
+.header-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b9caca;
+  max-width: 672px;
+  margin: 0;
+}
+
+/* Bento Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Success Score Card */
+.gauge-card {
+  grid-column: span 4;
+  background-color: #1b1b1b;
+  border: 1px solid #1f1f1f;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .gauge-card {
+    grid-column: span 1;
+  }
+}
+
+.gauge-status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #00f5ff;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  padding: 4px 8px;
+  background-color: rgba(0, 245, 255, 0.05);
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.gauge-svg-container {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-circle-bg {
+  stroke: #353535;
+  fill: transparent;
+  stroke-width: 4px;
+}
+
+.gauge-circle-fill {
+  stroke: #00f5ff;
+  fill: transparent;
+  stroke-width: 6px;
+  stroke-dasharray: 552.92;
+  stroke-dashoffset: 82.93;
+  filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.6));
+}
+
+.gauge-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #00f5ff;
+  line-height: 1.0;
+}
+
+.gauge-total {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #b9caca;
+  margin-top: 4px;
+}
+
+.score-breakdown {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.breakdown-box {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #1f1f1f;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.breakdown-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #b9caca;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.breakdown-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #e9feff;
+  margin: 0;
+}
+
+/* Difficulty/Analysis Card */
+.difficulty-card {
+  grid-column: span 8;
+  background-color: #1b1b1b;
+  border: 1px solid #1f1f1f;
+  padding: 32px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .difficulty-card {
+    grid-column: span 1;
+  }
+}
+
+.difficulty-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  height: 100%;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .difficulty-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.difficulty-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: left;
+}
+
+.difficulty-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #00f5ff;
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.difficulty-title .material-symbols-outlined {
+  font-size: 18px;
+}
+
+.difficulty-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b9caca;
+  margin: 0 0 24px 0;
+}
+
+.progress-track {
+  height: 4px;
+  background-color: #353535;
+  border-radius: 2px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #00f5ff;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+}
+
+.progress-bar.bar-45 {
+  width: 45%;
+}
+
+.progress-bar.bar-82 {
+  width: 82%;
+}
+
+/* User Personas Section */
+.section-wrapper {
+  grid-column: span 12;
+  text-align: left;
+}
+
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #b9caca;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 48px 0 24px 0;
+}
+
+.personas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .personas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.persona-card {
+  border: 1px solid #1f1f1f;
+  background-color: #1b1b1b;
+  padding: 32px;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.persona-card:hover {
+  border-color: #00f5ff;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.1);
+}
+
+.persona-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #3a494a;
+  margin-bottom: 24px;
+}
+
+.persona-icon {
+  color: #00f5ff;
+}
+
+.persona-sec {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(185, 202, 202, 0.4);
+}
+
+.persona-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #e9feff;
+  margin: 0 0 8px 0;
+}
+
+.persona-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #00f5ff;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+.persona-quote {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #b9caca;
+  border-left: 1px solid rgba(0, 245, 255, 0.3);
+  padding-left: 16px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Competitor Table Section */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+.benchmarking-table {
+  width: 100%;
+  border: 1px solid #1f1f1f;
+  background-color: #1b1b1b;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px;
+}
+
+.benchmarking-table th {
+  padding: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #00f5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #3a494a;
+  background-color: rgba(53, 53, 53, 0.3);
+}
+
+.benchmarking-table td {
+  padding: 24px;
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  color: #b9caca;
+  border-bottom: 1px solid #3a494a;
+}
+
+.benchmarking-table tr:last-child td {
+  border-bottom: none;
+}
+
+.benchmarking-table tr:hover {
+  background-color: rgba(233, 254, 255, 0.03);
+}
+
+.competitor-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #e9feff;
+}
+
+.competitor-weakness {
+  color: rgba(255, 180, 171, 0.8);
+  font-style: italic;
+}
+
+/* Verdict Section */
+.verdict-card {
+  grid-column: span 12;
+  background-color: rgba(0, 245, 255, 0.02);
+  border: 2px solid #00f5ff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.2);
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .verdict-card {
+    flex-direction: row;
+  }
+}
+
+.verdict-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.verdict-go {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 120px;
+  font-weight: 900;
+  color: #00f5ff;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.verdict-icon {
+  color: #00f5ff;
+  font-size: 48px !important;
+}
+
+.verdict-text-container {
+  max-width: 576px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .verdict-text-container {
+    text-align: right;
+  }
+}
+
+.verdict-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #e9feff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .verdict-text {
+    font-size: 24px;
+  }
+}
+
+/* Mobile bottom navigation */
+.mobile-bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(19, 19, 19, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid #3a494a;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none;
+  }
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #b9caca;
+  text-decoration: none;
+  padding: 8px 24px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-item.active {
+  color: #e9feff;
+  background-color: rgba(233, 254, 255, 0.1);
+}
+
+.mobile-nav-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
