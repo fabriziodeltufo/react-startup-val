@@ -65,10 +65,12 @@ function DashBoard() {
         {/* Header Section */}
         <header className="dashboard-header">
           <p className="header-tag">IDEA SUMMARY</p>
-          <h1 className="header-title">{dashboardData.ideaSummary.Title}</h1>
-          <p className="header-desc">
-            {dashboardData.ideaSummary.Description}
-          </p>
+          <div className="header-columns">
+            <h1 className="header-title">{dashboardData.ideaSummary.Title}</h1>
+            <p className="header-desc">
+              {dashboardData.ideaSummary.Description}
+            </p>
+          </div>
         </header>
 
         {/* Bento Grid Layout */}
