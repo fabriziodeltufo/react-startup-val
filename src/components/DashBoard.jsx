@@ -34,7 +34,7 @@ function DashBoard() {
       <main className="dashboard-main">
         {/* Top bar back action (Mobile & Desktop helper) */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '32px' }}>
-          <button 
+          <button
             onClick={handleBackToInput}
             className="font-label-sm text-label-sm uppercase tracking-widest px-4 py-2 border border-outline-variant hover:border-primary-container transition-colors"
             style={{
@@ -77,18 +77,14 @@ function DashBoard() {
         <div className="dashboard-grid">
           {/* Success Score Gauge Card */}
           <section className="gauge-card">
-            <div className="gauge-status">
-              Status: {dashboardData.successScore.description || "Verified"}
-            </div>
-            
             <div className="gauge-svg-container">
               <svg className="gauge-svg" viewBox="0 0 192 192">
                 <circle className="gauge-circle-bg" cx="96" cy="96" r="88" />
-                <circle 
-                  className="gauge-circle-fill" 
-                  cx="96" 
-                  cy="96" 
-                  r="88" 
+                <circle
+                  className="gauge-circle-fill"
+                  cx="96"
+                  cy="96"
+                  r="88"
                   style={{ strokeDashoffset }}
                 />
               </svg>
@@ -98,16 +94,11 @@ function DashBoard() {
               </div>
             </div>
 
-            <div className="score-breakdown">
-              <div className="breakdown-box">
-                <p className="breakdown-label">Confidence</p>
-                <p className="breakdown-val">HIGH</p>
-              </div>
-              <div className="breakdown-box">
-                <p className="breakdown-label">Volatility</p>
-                <p className="breakdown-val">LOW</p>
-              </div>
+            <div className="gauge-description">
+              STATUS: {dashboardData.successScore.description || "Verified"}
             </div>
+
+
           </section>
 
           {/* Difficulty Analysis Section */}
@@ -129,8 +120,8 @@ function DashBoard() {
                       </p>
                     </div>
                     <div className="progress-track">
-                      <div 
-                        className="progress-bar" 
+                      <div
+                        className="progress-bar"
                         style={{ width: isFirst ? '45%' : '82%' }}
                       ></div>
                     </div>
@@ -189,7 +180,7 @@ function DashBoard() {
           </div>
 
           {/* Final Verdict Banner */}
-          <section 
+          <section
             className="verdict-card"
             style={{
               borderColor: verdictColor.main,

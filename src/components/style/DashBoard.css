@@ -134,19 +134,20 @@
   }
 }
 
-.gauge-status {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+.gauge-description {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 500;
   color: #00f5ff;
   border: 1px solid rgba(0, 245, 255, 0.3);
-  padding: 4px 8px;
+  padding: 6px 16px;
   background-color: rgba(0, 245, 255, 0.05);
   border-radius: 4px;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .gauge-svg-container {
