@@ -103,7 +103,8 @@ function TechStackFooter() {
             ))}
           </div>
 
-          <p className="footer-copyright">Copyright &copy; 2026 FDT - All Rights Reserved.</p>
+          <p className="footer-copyright">Copyright &copy; 2026 Fabrizio Del Tufo - Released under MIT License.</p>
+
         </div>
       </div>
     </footer>
