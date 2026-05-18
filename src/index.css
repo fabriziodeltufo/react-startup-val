@@ -527,19 +527,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0b0b0b;
-  border: 1px solid #3a494a;
+  background-color: rgba(0, 245, 255, 0.01);
+  border: 1px solid rgba(0, 245, 255, 0.25);
   border-radius: 8px;
-  color: #b9caca;
+  color: #00f5ff;
   transition: all 0.3s ease;
 }
 
 .tech-item:hover .tech-icon-container {
   color: #00f5ff;
   border-color: #00f5ff;
-  box-shadow: 0 0 15px rgba(0, 245, 255, 0.4);
-  background-color: rgba(0, 245, 255, 0.02);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  background-color: rgba(0, 245, 255, 0.06);
 }
+
 
 .tech-name {
   font-family: 'JetBrains Mono', monospace;
