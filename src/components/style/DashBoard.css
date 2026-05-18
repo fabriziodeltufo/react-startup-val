@@ -1,6 +1,6 @@
 /* DashBoard.css - Replicating Stitch Dashboard layout exactly in Vanilla CSS */
 
-.dashboard-container {
+.dashboard-page-container {
   background-color: #131313;
   min-height: calc(100vh - 73px); /* Excludes glassmorphic header height */
   color: #e5e2e1;
@@ -8,6 +8,8 @@
   box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .dashboard-main {
