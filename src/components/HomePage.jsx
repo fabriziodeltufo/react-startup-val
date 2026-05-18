@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useGlobal } from '../context/globalContext';
 import './style/HomePage.css';
 
 function HomePage() {
-  const [idea, setIdea] = useState('');
+  const { idea: globalIdea, setIdea: setGlobalIdea } = useGlobal();
+  const [idea, setIdea] = useState(globalIdea || '');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleValidate = (e) => {
     e.preventDefault();
-    // Simulate validation and navigate to dashboard
+    const trimmedIdea = idea.trim();
+    if (!trimmedIdea) {
+      setError('Please describe your business idea in detail to proceed.');
+      return;
+    }
+    setError('');
+    setGlobalIdea(trimmedIdea);
+    // Navigate to dashboard
     navigate('/dashboard');
   };
 
@@ -122,7 +132,7 @@ function HomePage() {
 
         {/* Input Area */}
         <section className="input-section">
-          <form onSubmit={handleValidate} className="input-card">
+          <form onSubmit={handleValidate} className={`input-card ${error ? 'has-error' : ''}`}>
             <div className="input-body">
               <label className="sr-only" htmlFor="idea-input">Describe your business idea here:</label>
               <textarea
@@ -130,8 +140,17 @@ function HomePage() {
                 className="textarea-input"
                 placeholder="Describe your business idea in detail (e.g., An AI-powered logistics platform for carbon-neutral maritime shipping)..."
                 value={idea}
-                onChange={(e) => setIdea(e.target.value)}
+                onChange={(e) => {
+                  setIdea(e.target.value);
+                  if (error) setError('');
+                }}
               />
+              {error && (
+                <div className="error-message">
+                  <span className="material-symbols-outlined error-icon">warning</span>
+                  <span className="error-text">{error}</span>
+                </div>
+              )}
             </div>
             <div className="input-footer">
               <button type="submit" className="validate-btn">
