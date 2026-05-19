@@ -21,7 +21,7 @@ function HomePage() {
     // Check if the idea is too short (e.g. less than 15 characters or fewer than 3 words)
     const wordCount = trimmedIdea.split(/\s+/).filter(Boolean).length;
     if (trimmedIdea.length < 50 || wordCount < 15) {
-      setError('Your idea is too short. Please describe it in more detail (at least 3 words and 15 characters).');
+      setError('Your idea is too short. Please describe it in more detail (at least 15 words and 50 characters).');
       return;
     }
 
