@@ -5,7 +5,7 @@ const GlobalContext = createContext(undefined);
 
 // Provider del Context
 export function GlobalProvider({ children }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [idea, setIdea] = useState('');
 
   return (
