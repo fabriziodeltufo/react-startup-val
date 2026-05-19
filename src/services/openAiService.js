@@ -1,12 +1,25 @@
 import OpenAI from 'openai';
+import initialData from '../dataDasboard';
 
-// Inizializza il client OpenAI
-const openai = new OpenAI({
-    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true 
-});
+const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+
+// Inizializza il client OpenAI solo se è presente una chiave valida
+let openai;
+if (apiKey && !apiKey.includes('xxx')) {
+    openai = new OpenAI({
+        apiKey: apiKey,
+        dangerouslyAllowBrowser: true 
+    });
+}
 
 export const analyzeIdea = async (ideaText) => {
+    // Se la chiave non è valida, usiamo i dati mock (demo mode)
+    if (!openai) {
+        console.warn("API key missing or invalid - running in demo mode");
+        // Simuliamo un ritardo di rete per permettere al loader di mostrarsi
+        return new Promise(resolve => setTimeout(() => resolve(initialData), 2000));
+    }
+
     // Definiamo il prompt con le istruzioni e la struttura JSON desiderata
     // basandoci sulla struttura dell'oggetto "data" in dataDashboard.js
     const prompt = `
@@ -78,6 +91,7 @@ Devi restituire ESATTAMENTE un oggetto JSON valido con la seguente struttura:
         return data;
     } catch (error) {
         console.error("Errore durante la comunicazione con l'API di OpenAI:", error);
-        throw error;
+        console.warn("Fallback to demo mode due to API error.");
+        return initialData;
     }
 };
