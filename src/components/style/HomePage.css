@@ -211,8 +211,8 @@
 }
 
 .reset-btn {
-  background-color: #ff4d4d;
-  color: #3b0000;
+  background-color: var(--color-yellow, #ffd700);
+  color: #2b2000;
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 500;
@@ -227,12 +227,12 @@
   gap: 12px;
   width: 180px;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 15px rgba(255, 77, 77, 0.2);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
 .reset-btn:hover {
-  background-color: #ff6b6b;
-  box-shadow: 0 0 20px rgba(255, 77, 77, 0.4);
+  background-color: #ffeb3b;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 .reset-btn:active {
