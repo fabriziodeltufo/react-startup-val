@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useGlobal } from '../context/globalContext';
+import Loader from './Loader';
 import './style/HomePage.css';
 
 function HomePage() {
-  const { idea: globalIdea, setIdea: setGlobalIdea } = useGlobal();
+  const { idea: globalIdea, setIdea: setGlobalIdea, isLoading, setIsLoading } = useGlobal();
   const [idea, setIdea] = useState(globalIdea || '');
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -18,8 +19,8 @@ function HomePage() {
     }
     setError('');
     setGlobalIdea(trimmedIdea);
-    // Navigate to dashboard
-    navigate('/dashboard');
+    // Trigger premium scanner loader
+    setIsLoading(true);
   };
 
   const techIcons = [
@@ -110,6 +111,14 @@ function HomePage() {
 
   return (
     <div className="home-page-container">
+      {isLoading && (
+        <Loader 
+          onComplete={() => {
+            setIsLoading(false);
+            navigate('/dashboard');
+          }} 
+        />
+      )}
       <main className="home-main">
         {/* Hero Section */}
         <section className="hero-section">
