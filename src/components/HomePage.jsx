@@ -17,6 +17,14 @@ function HomePage() {
       setError('Please describe your business idea in detail to proceed.');
       return;
     }
+    
+    // Check if the idea is too short (e.g. less than 15 characters or fewer than 3 words)
+    const wordCount = trimmedIdea.split(/\s+/).filter(Boolean).length;
+    if (trimmedIdea.length < 15 || wordCount < 3) {
+      setError('Your idea is too short. Please describe it in more detail (at least 3 words and 15 characters).');
+      return;
+    }
+
     setError('');
     setGlobalIdea(trimmedIdea);
     // Trigger premium scanner loader
