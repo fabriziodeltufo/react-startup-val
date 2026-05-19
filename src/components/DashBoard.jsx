@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useGlobal } from '../context/globalContext';
+import { analyzeIdea } from '../services/openAiService';
+import Loader from './Loader';
 import './style/DashBoard.css';
 import initialData from '../dataDasboard';
 
@@ -14,7 +17,29 @@ import TechStackFooter from './dashboard/TechStackFooter';
 
 function DashBoard() {
   const navigate = useNavigate();
+  const { idea, isLoading, setIsLoading } = useGlobal();
   const [dashboardData, setDashboardData] = useState(initialData);
+
+  useEffect(() => {
+    const fetchAnalysis = async () => {
+      if (!idea) {
+        // Se si accede direttamente senza idea, reindirizza alla home
+        navigate('/');
+        return;
+      }
+      try {
+        setIsLoading(true);
+        const result = await analyzeIdea(idea);
+        setDashboardData(result);
+      } catch (error) {
+        console.error("Errore durante l'analisi dell'idea:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchAnalysis();
+  }, [idea, setIsLoading, navigate]);
 
   const handleBackToInput = () => {
     navigate('/');
@@ -22,6 +47,7 @@ function DashBoard() {
 
   return (
     <div className="dashboard-page-container">
+      {isLoading && <Loader />}
       <main className="dashboard-main">
         {/* Top bar back action (Mobile & Desktop helper) */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '32px' }}>
