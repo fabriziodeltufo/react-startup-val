@@ -23,6 +23,12 @@ function HomePage() {
     setIsLoading(true);
   };
 
+  const handleReset = () => {
+    setIdea('');
+    setError('');
+    setGlobalIdea('');
+  };
+
   const techIcons = [
     {
       name: 'React',
@@ -162,6 +168,10 @@ function HomePage() {
               )}
             </div>
             <div className="input-footer">
+              <button type="button" className="reset-btn" onClick={handleReset}>
+                RESET
+                <span className="material-symbols-outlined">restart_alt</span>
+              </button>
               <button type="submit" className="validate-btn">
                 VALIDATE IDEA
                 <span className="material-symbols-outlined">arrow_forward</span>
