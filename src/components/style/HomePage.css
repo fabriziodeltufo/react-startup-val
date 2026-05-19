@@ -280,6 +280,21 @@
   }
 }
 
+.demo-warning-banner {
+  color: #ff4d4d;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 0;
+  animation: blinkWarning 1.5s infinite;
+}
+
+@keyframes blinkWarning {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
 /* Decorative HUD Elements */
 .hud-line-left,
 .hud-line-right {

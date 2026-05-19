@@ -179,6 +179,10 @@ function HomePage() {
             </div>
           </form>
 
+          <p className="demo-warning-banner">
+            THIS IS A DEMO APP. DO NOT USE WITH REAL API KEYS IN PRODUCTION.
+          </p>
+
           {/* Decorative HUD elements */}
           {/* <div className="hud-line-left"></div> */}
           {/* <div className="hud-line-right"></div> */}
