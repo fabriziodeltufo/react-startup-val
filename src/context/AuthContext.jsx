@@ -9,6 +9,14 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+
+
+        // Se supabase è null (modalità demo), saltiamo l'autenticazione
+        if (!supabase) {
+            setLoading(false);
+            return;
+        }
+
         // Check active sessions and sets the user
         supabase.auth.getSession().then(({ data: { session } }) => {
 
