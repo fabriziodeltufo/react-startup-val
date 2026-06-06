@@ -66,7 +66,7 @@ const data = {
     verdict: {
         text: "GO",
         color: "cyan", // red x no GO
-        description: "Houston, GO for launch !"
+        description: "Houston, GO for launch!"
     }
 
 
