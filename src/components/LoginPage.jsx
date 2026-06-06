@@ -3,28 +3,24 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { supabase } from '../services/supabase';
 import './style/LoginPage.css';
 
-
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState(''); // Stato per mostrare errori a video
   const navigate = useNavigate();
 
   const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('--- LOGIN SUBMISSION ---');
-  //   console.log('Email:', email);
-  //   console.log('Password:', 'xxxxxxx');
-  //   console.log('Timestamp:', timestamp);
-  //   console.log('------------------------');
-  // };
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMsg(''); // Reset errori
 
-
+    // MODIFICA: Controllo se supabase è inizializzato
+    if (!supabase) {
+      console.warn('⚠️ Modalità Demo: Supabase non configurato.');
+      setErrorMsg('Sistema in modalità dimostrativa: autenticazione disabilitata.');
+      return;
+    }
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -33,23 +29,18 @@ function LoginPage() {
 
     if (error) {
       console.log('❌ Login error:', error.message);
-      return; // blocca tutto
+      setErrorMsg(error.message); // Mostriamo l'errore all'utente
+      return;
     }
 
     console.log('✅ Login OK:', data);
-
-    // 🔴 REDIRECT ALLA HOME
     navigate('/');
   };
-
-
 
   return (
     <div className="login-container">
       <main className="login-main">
-        {/* Login HUD Card */}
         <div className="login-card">
-          {/* Card Header */}
           <div className="login-header">
             <div className="login-badge">
               <span className="login-ping">
@@ -58,22 +49,23 @@ function LoginPage() {
               </span>
               <span className="login-label">AUTH_MODULE // SECURE</span>
             </div>
-            <span style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '11px',
-              color: '#849495'
-            }}>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '11px', color: '#849495' }}>
               CON_SYS_V2.0
             </span>
           </div>
 
-          {/* Card Body */}
           <div className="login-body">
             <h1 className="login-title">Accesso</h1>
             <p className="login-desc">Inserisci le tue credenziali per accedere al sistema di validazione.</p>
 
+            {/* Visualizzazione errori */}
+            {errorMsg && (
+              <div style={{ color: '#ff3131', fontSize: '12px', marginBottom: '15px', fontFamily: "'JetBrains Mono', monospace" }}>
+                {errorMsg}
+              </div>
+            )}
+
             <form className="login-form" onSubmit={handleSubmit} noValidate>
-              {/* Email Field */}
               <div className="form-group">
                 <label htmlFor="login-email">Indirizzo Email</label>
                 <div className="input-wrapper">
@@ -87,16 +79,12 @@ function LoginPage() {
                     required
                     autoComplete="email"
                   />
-                  <span
-                    className="material-symbols-outlined input-icon"
-                    style={{ left: '12px', position: 'absolute', color: '#556667', fontSize: '18px', pointerEvents: 'none' }}
-                  >
+                  <span className="material-symbols-outlined input-icon" style={{ left: '12px', position: 'absolute', color: '#556667', fontSize: '18px', pointerEvents: 'none' }}>
                     mail
                   </span>
                 </div>
               </div>
 
-              {/* Password Field */}
               <div className="form-group">
                 <label htmlFor="login-password">Password</label>
                 <div className="input-wrapper">
@@ -110,16 +98,12 @@ function LoginPage() {
                     required
                     autoComplete="current-password"
                   />
-                  <span
-                    className="material-symbols-outlined input-icon"
-                    style={{ left: '12px', position: 'absolute', color: '#556667', fontSize: '18px', pointerEvents: 'none' }}
-                  >
+                  <span className="material-symbols-outlined input-icon" style={{ left: '12px', position: 'absolute', color: '#556667', fontSize: '18px', pointerEvents: 'none' }}>
                     lock
                   </span>
                 </div>
               </div>
 
-              {/* Submit Button */}
               <button id="login-submit-btn" type="submit" className="submit-btn">
                 <span className="material-symbols-outlined">login</span>
                 ACCEDI AL SISTEMA
@@ -128,27 +112,18 @@ function LoginPage() {
           </div>
         </div>
 
-        {/* Telemetry readout below card */}
         <div className="login-telemetry">
-          <span>AUTH_ENDPOINT: /login</span>
+          <span>AUTH_ENDPOINT: {supabase ? '/login' : 'DEMO_MODE'}</span>
           <span>TIMESTAMP: {timestamp} UTC</span>
         </div>
       </main>
 
-      {/* Bottom Nav for Mobile */}
       <nav className="mobile-bottom-nav">
-        <NavLink
-          to="/"
-          className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}
-          end
-        >
+        <NavLink to="/" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`} end>
           <span className="material-symbols-outlined">home</span>
           <span className="mobile-nav-label">HOME</span>
         </NavLink>
-        <NavLink
-          to="/dashboard"
-          className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}
-        >
+        <NavLink to="/dashboard" className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}>
           <span className="material-symbols-outlined">analytics</span>
           <span className="mobile-nav-label">DASHBOARD</span>
         </NavLink>
