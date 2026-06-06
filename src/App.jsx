@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import DashBoard from './components/DashBoard';
 import PageNotFound from './components/PageNotFound';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

@@ -41,10 +41,10 @@ function Loader({ onComplete }) {
       // Add stage to logs in "active" status
       setVisibleLogs(prev => {
         // Replace previous active with success
-        const updated = prev.map(log => 
+        const updated = prev.map(log =>
           log.status === 'active' ? { ...log, status: 'success' } : log
         );
-        return [...updated, { text: stage.text, status: 'active', id: index }];
+        return [...updated, { text: stage.text, status: 'active', id: `stage-${index}-${Date.now()}` }];
       });
 
       // Calculate progress increment per interval
