@@ -11,7 +11,7 @@ function LoginPage() {
     e.preventDefault();
     console.log('--- LOGIN SUBMISSION ---');
     console.log('Email:', email);
-    console.log('Password:', password);
+    console.log('Password:', 'xxxxxxx');
     console.log('Timestamp:', timestamp);
     console.log('------------------------');
   };
