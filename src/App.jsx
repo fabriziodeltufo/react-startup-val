@@ -4,6 +4,9 @@ import HomePage from './components/HomePage';
 import DashBoard from './components/DashBoard';
 import PageNotFound from './components/PageNotFound';
 import LoginPage from './components/LoginPage';
+import ProtectedRoute from './components/ProtectedRoute';
+import Loader from './components/Loader';
+
 
 function App() {
   return (
@@ -31,15 +34,26 @@ function App() {
         </div>
       </nav>
 
-      {/* Route Views */}
+
+
+      {/* {isLoading && <Loader />} */}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashBoard />} />
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoute />} >
+          <Route path="/" element={<HomePage />} />
+          <Route path="/dashboard" element={<DashBoard />} />
+        </Route>
+
+        {/* Public Route  */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
     </BrowserRouter>
   );
+
+
+
 }
 
 export default App;

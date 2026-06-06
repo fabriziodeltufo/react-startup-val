@@ -1,20 +1,48 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { supabase } from '../services/supabase';
 import './style/LoginPage.css';
+
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
   const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('--- LOGIN SUBMISSION ---');
+  //   console.log('Email:', email);
+  //   console.log('Password:', 'xxxxxxx');
+  //   console.log('Timestamp:', timestamp);
+  //   console.log('------------------------');
+  // };
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('--- LOGIN SUBMISSION ---');
-    console.log('Email:', email);
-    console.log('Password:', 'xxxxxxx');
-    console.log('Timestamp:', timestamp);
-    console.log('------------------------');
+
+
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      console.log('❌ Login error:', error.message);
+      return; // blocca tutto
+    }
+
+    console.log('✅ Login OK:', data);
+
+    // 🔴 REDIRECT ALLA HOME
+    navigate('/');
   };
+
+
 
   return (
     <div className="login-container">
