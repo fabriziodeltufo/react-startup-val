@@ -1,44 +1,44 @@
 const data = {
 
     ideaSummary: {
-        Title: "Autonomous Micro-SaaS ",
-        Description: "Advanced diagnostic run mapping technical feasibility against high-density urban agricultural environments. Analysis focuses on real-time nutrient calibration, spectral imaging data streams, and predictive harvest cycle optimization for vertical infrastructures.",
+        Title: "Micro-SaaS Autonomo",
+        Description: "Diagnostica avanzata che mappa la fattibilità tecnica in ambienti di agricoltura urbana ad alta densità. L'analisi si concentra sulla calibrazione dei nutrienti in tempo reale, sui flussi di dati di imaging spettrale e sull'ottimizzazione predittiva del ciclo di raccolto per infrastrutture verticali.",
     },
 
     successScore: {
         value: "100",
-        description: "score description",
+        description: "Punteggio di successo massimo stimato",
     },
 
     difficulty: [
         {
-            title: "MARKET ENTRY BARRIERS",
-            description: "Initial capital requirements for high-spec IoT sensor arrays present a primary friction point. ",
+            title: "BARRIERE D'INGRESSO AL MERCATO",
+            description: "I requisiti di capitale iniziale per i sensori IoT ad alta precisione rappresentano il punto di attrito principale.",
         },
 
         {
-            title: "SCALABILITY VECTORS",
-            description: "The modular architecture allows for seamless horizontal scaling across metropolitan farming hubs.",
+            title: "VETTORI DI SCALABILITÀ",
+            description: "L'architettura modulare consente una scalabilità orizzontale fluida tra i vari hub agricoli metropolitani.",
         },
     ],
 
     personas: [
         {
             name: "Marcus Thorne",
-            role: "Vertical Farm Owner",
-            quote: "Focuses on operational overhead reduction and maximizing yield per square meter through rigorous automation."
+            role: "Proprietario di Fattoria Verticale",
+            quote: "Si concentra sulla riduzione dei costi operativi e sulla massimizzazione della resa per metro quadrato tramite un'automazione rigorosa."
         },
 
         {
             name: "Elena Rodriguez",
-            role: "Sustainability Director",
-            quote: "Prioritizes resource circularity and transparent environmental impact metrics for institutional reporting."
+            role: "Direttrice della Sostenibilità",
+            quote: "Priorità all'economia circolare delle risorse e a metriche trasparenti sull'impatto ambientale per la rendicontazione istituzionale."
         },
 
         {
             name: "Dr. Aris Varma",
-            role: "Agricultural Consultant",
-            quote: "Requires high-fidelity data exports and granular control over algorithmic growth parameters."
+            role: "Consulente Agricolo",
+            quote: "Richiede esportazioni di dati ad alta precisione e controllo granulare sui parametri di crescita algoritmica."
         }
 
     ],
@@ -46,27 +46,27 @@ const data = {
     competitors: [
         {
             name: "AgroPulse",
-            coreBusiness: "Large-scale rural soil monitoring sensors",
-            weakness: "Poor integration with vertical hydroponic stacks"
+            coreBusiness: "Sensori di monitoraggio del suolo rurale su larga scala",
+            weakness: "Scarsa integrazione con sistemi idroponici verticali"
         },
 
         {
             name: "YieldBot",
-            coreBusiness: "AI-driven crop selection marketplace",
-            weakness: "Hardware agnostic; zero real-time monitoring"
+            coreBusiness: "Mercato per la selezione delle colture basato su IA",
+            weakness: "Indipendente dall'hardware; nessun monitoraggio in tempo reale"
         },
 
         {
             name: "GreenSense",
-            coreBusiness: "Consumer-level greenhouse automation kits",
-            weakness: "Lacks enterprise-grade predictive analytics"
+            coreBusiness: "Kit di automazione per serre a livello consumer",
+            weakness: "Manca di analisi predittive di livello aziendale"
         }
     ],
 
     verdict: {
         text: "GO",
         color: "cyan", // red x no GO
-        description: "Houston, Go for launch !"
+        description: "Houston, GO for launch !"
     }
 
 

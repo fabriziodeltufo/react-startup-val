@@ -25,7 +25,7 @@ function SuccessScoreCard({ value, description }) {
       </div>
 
       <div className="gauge-description">
-        STATUS: {description || 'Verified'}
+        STATO: {description || 'Verificato'}
       </div>
     </section>
   );

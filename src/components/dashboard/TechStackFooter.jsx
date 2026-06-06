@@ -91,7 +91,7 @@ function TechStackFooter() {
     <footer className="stats-footer" style={{ marginTop: '64px' }}>
       <div className="stats-container">
         <div className="tech-stack-wrapper">
-          <p className="tech-stack-title">POWERED BY INTEGRATED ECOSYSTEM</p>
+          <p className="tech-stack-title">SVILUPPATO CON L'ECOSISTEMA INTEGRATO</p>
           <div className="tech-stack-grid">
             {TECH_ICONS.map((tech, index) => (
               <div key={index} className="tech-item" title={tech.name}>
@@ -103,7 +103,7 @@ function TechStackFooter() {
             ))}
           </div>
 
-          <p className="footer-copyright">Copyright &copy; 2026 Fabrizio Del Tufo - Released under MIT License.</p>
+          <p className="footer-copyright">Copyright &copy; 2026 Fabrizio Del Tufo - Rilasciato sotto Licenza MIT.</p>
 
         </div>
       </div>

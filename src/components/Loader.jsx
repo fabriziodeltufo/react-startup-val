@@ -8,14 +8,14 @@ function Loader({ onComplete }) {
   const consoleRef = useRef(null);
 
   const STAGES = [
-    { text: 'INITIALIZING VALIDATION ENGINE...', duration: 500 },
-    { text: 'PARSING CORE VENTURE PARAMETERS...', duration: 600 },
-    { text: 'SEARCHING GLOBAL COMPETITOR DATABASES...', duration: 800 },
-    { text: 'EXTRACTING SEGMENTED DEMOGRAPHIC DATA...', duration: 700 },
-    { text: 'EVALUATING FINANCIAL VIABILITY METRICS...', duration: 600 },
-    { text: 'SIMULATING USER PERSONA ENGAGEMENT...', duration: 700 },
-    { text: 'CALCULATING PREDICTIVE ACCURACY SCORES...', duration: 500 },
-    { text: 'SYNCHRONIZING TELEMETRY DASHBOARD...', duration: 400 }
+    { text: 'INIZIALIZZAZIONE MOTORE DI VALIDAZIONE...', duration: 500 },
+    { text: 'ANALISI DEI PARAMETRI CHIAVE DEL PROGETTO...', duration: 600 },
+    { text: 'RICERCA NEI DATABASE GLOBALI DEI CONCORRENTI...', duration: 800 },
+    { text: 'ESTRAZIONE DEI DATI DEMOGRAFICI SEGMENTATI...', duration: 700 },
+    { text: 'VALUTAZIONE DELLE METRICHE DI SOSTENIBILITÀ FINANZIARIA...', duration: 600 },
+    { text: 'SIMULAZIONE DEL COINVOLGIMENTO DELLE USER PERSONA...', duration: 700 },
+    { text: 'CALCOLO DEI PUNTEGGI DI ACCURATEZZA PREVISIONALE...', duration: 500 },
+    { text: 'SINCRONIZZAZIONE DEL PANNELLO DI TELEMETRIA...', duration: 400 }
   ];
 
   useEffect(() => {
@@ -93,7 +93,7 @@ function Loader({ onComplete }) {
         {`SYS_KERN_ADDR: 0x7FFF5BE3F418\nINIT_THREAD_ID: 0x00002E4C\nALLOC_BLOCK: 4096 BYTES\nSTATUS_CODE: STABLE_200\nBUFFER_STATE: OK`}
       </div>
       <div className="loader-bg-telemetry-right">
-        {`LATENCY_VAL: 14ms\nGRID_SECTOR: B-12\nCONNECTIVITY: 100%\nCYBER_SYNC: ACTIVE\nENGINE: ONLINE`}
+        {`LATENCY_VAL: 14ms\nGRID_SECTOR: B-12\nCONNETTIVITÀ: 100%\nCYBER_SYNC: ATTIVO\nMOTORE: ONLINE`}
       </div>
 
       {/* Laser Scanning Line */}
@@ -114,14 +114,14 @@ function Loader({ onComplete }) {
               <span className="loader-status-dot-ping"></span>
               <span className="loader-status-dot-core"></span>
             </span>
-            <span className="loader-badge-text">SCANNER ACTIVE</span>
+            <span className="loader-badge-text">SCANNER ATTIVO</span>
           </div>
           <span className="loader-telemetry-tag">PROC_SHIELD//v1.0.4</span>
         </div>
 
         {/* Card Body */}
         <div className="loader-card-body">
-          <h2 className="loader-title">VALIDATING VENTURE</h2>
+          <h2 className="loader-title">VALIDAZIONE DEL PROGETTO</h2>
 
           {/* Telemetry Console */}
           <div className="loader-console" ref={consoleRef}>
@@ -142,7 +142,7 @@ function Loader({ onComplete }) {
         {/* Progress Bar Section */}
         <div className="loader-progress-section">
           <div className="loader-progress-meta">
-            <span>ENGINE SCAN STATUS</span>
+            <span>STATO DI SCANSIONE DEL MOTORE</span>
             <span className="loader-progress-percentage">{Math.round(progress)}%</span>
           </div>
           <div className="loader-progress-track">

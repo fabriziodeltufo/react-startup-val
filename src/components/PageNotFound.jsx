@@ -16,20 +16,20 @@ function PageNotFound() {
                 <span className="animate-ping-red"></span>
                 <span className="bg-dot-red"></span>
               </span>
-              <span className="notfound-label">404 // ROUTE_DISCONNECTED</span>
+              <span className="notfound-label">404 // ROTTA DISCONNESSA</span>
             </div>
             <span className="terminal-id">CON_SYS_V2.0</span>
           </div>
 
           <div className="notfound-body">
             <div className="error-code">404</div>
-            <h2 className="notfound-title">Page Not Found</h2>
+            <h2 className="notfound-title">Pagina Non Trovata</h2>
             <p className="notfound-desc">
-              The requested system coordinate could not be resolved. Please verify the transmission parameters or return to the main validation console.
+              La coordinata di sistema richiesta non può essere risolta. Si prega di verificare i parametri di trasmissione o di tornare alla console principale di validazione.
             </p>
             <NavLink to="/" className="console-btn">
               <span className="material-symbols-outlined">terminal</span>
-              RETURN TO CONSOLE
+              TORNA ALLA CONSOLE
             </NavLink>
           </div>
         </div>

@@ -5,7 +5,7 @@ function UserPersonasCard({ personas }) {
 
   return (
     <div className="section-wrapper">
-      <h2 className="section-title">Target User Segments</h2>
+      <h2 className="section-title">Segmenti di Utenti Target</h2>
       <div className="personas-grid">
         {personas.map((persona, index) => {
           const icons = ['person', 'account_circle', 'science'];

@@ -5,14 +5,14 @@ function CompetitorAnalysisCard({ competitors }) {
 
   return (
     <div className="section-wrapper">
-      <h2 className="section-title">Competitor Benchmarking</h2>
+      <h2 className="section-title">Analisi dei Concorrenti</h2>
       <div className="table-container">
         <table className="benchmarking-table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Core Business</th>
-              <th>Weakness</th>
+              <th>Nome</th>
+              <th>Attività Principale</th>
+              <th>Punto Debole</th>
             </tr>
           </thead>
           <tbody>

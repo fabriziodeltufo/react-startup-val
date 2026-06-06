@@ -75,7 +75,7 @@ function DashBoard() {
               e.currentTarget.style.color = '#c8c6c5';
             }}
           >
-            Back to Input
+            Torna all'inserimento
           </button>
         </div>
 

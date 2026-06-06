@@ -13,14 +13,14 @@ function HomePage() {
     e.preventDefault();
     const trimmedIdea = idea.trim();
     if (!trimmedIdea) {
-      setError('Please describe your business idea in detail to proceed.');
+      setError('Descrivi in dettaglio la tua idea di business per procedere.');
       return;
     }
 
     // Check if the idea is too short (e.g. less than 15 characters or fewer than 3 words)
     const wordCount = trimmedIdea.split(/\s+/).filter(Boolean).length;
     if (trimmedIdea.length < 50 || wordCount < 15) {
-      setError('Your idea is too short. Please describe it in more detail (at least 15 words and 50 characters).');
+      setError('La tua idea è troppo corta. Descrivila in maggior dettaglio (almeno 15 parole e 50 caratteri).');
       return;
     }
 
@@ -133,15 +133,15 @@ function HomePage() {
               <span className="animate-ping"></span>
               <span className="bg-dot"></span>
             </span>
-            <span className="badge-text">SYSTEM ONLINE</span>
+            <span className="badge-text">SISTEMA ONLINE</span>
           </div>
 
           <h1 className="hero-title">
-            STARTUP VALIDATION
+            VALIDAZIONE STARTUP
           </h1>
 
           <p className="hero-subtitle">
-            Validate your business idea in seconds using high-fidelity market data, competitive intelligence, and predictive failure analysis.
+            Valuta la tua idea di business in pochi secondi utilizzando dati di mercato ad alta fedeltà, analisi competitiva e previsione dei fallimenti.
           </p>
         </section>
 
@@ -149,11 +149,11 @@ function HomePage() {
         <section className="input-section">
           <form onSubmit={handleValidate} className={`input-card ${error ? 'has-error' : ''}`}>
             <div className="input-body">
-              <label className="sr-only" htmlFor="idea-input">Describe your business idea here:</label>
+              <label className="sr-only" htmlFor="idea-input">Descrivi qui la tua idea di business:</label>
               <textarea
                 id="idea-input"
                 className="textarea-input"
-                placeholder="Describe your business idea in detail (e.g., An AI-powered logistics platform for carbon-neutral maritime shipping)..."
+                placeholder="Descrivi in dettaglio la tua idea di business (es. Una piattaforma logistica basata su IA per spedizioni marittime a emissioni zero)..."
                 value={idea}
                 onChange={(e) => {
                   setIdea(e.target.value);
@@ -169,18 +169,18 @@ function HomePage() {
             </div>
             <div className="input-footer">
               <button type="button" className="reset-btn" onClick={handleReset}>
-                RESET
+                REIMPOSTA
                 <span className="material-symbols-outlined">restart_alt</span>
               </button>
               <button type="submit" className="validate-btn">
-                VALIDATE IDEA
+                VALIDA L'IDEA
                 <span className="material-symbols-outlined">arrow_forward</span>
               </button>
             </div>
           </form>
 
           <p className="demo-warning-banner">
-            THIS IS A DEMO APP. DO NOT USE WITH REAL API KEYS IN PRODUCTION.
+            QUESTA È UN'APP DIMOSTRATIVA. NON UTILIZZARE CON CHIAVI API REALI IN PRODUZIONE.
           </p>
 
           {/* Decorative HUD elements */}
@@ -193,7 +193,7 @@ function HomePage() {
       <footer className="stats-footer">
         <div className="stats-container">
           <div className="tech-stack-wrapper">
-            <p className="tech-stack-title">POWERED BY INTEGRATED ECOSYSTEM</p>
+            <p className="tech-stack-title">SVILUPPATO CON L'ECOSISTEMA INTEGRATO</p>
             <div className="tech-stack-grid">
               {techIcons.map((tech, index) => (
                 <div key={index} className="tech-item" title={tech.name}>
@@ -205,7 +205,7 @@ function HomePage() {
               ))}
             </div>
 
-            <p className="footer-copyright">Copyright &copy; 2026 Fabrizio Del Tufo - Released under MIT License.</p>
+            <p className="footer-copyright">Copyright &copy; 2026 Fabrizio Del Tufo - Rilasciato sotto Licenza MIT.</p>
           </div>
         </div>
       </footer>
