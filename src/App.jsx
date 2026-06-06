@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  NavLink
-} from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import DashBoard from './components/DashBoard';
 import PageNotFound from './components/PageNotFound';
@@ -17,11 +11,6 @@ import { supabase } from './services/supabase';
 
 function AppLayout() {
   const { user } = useAuth();
-
-  // const handleLogout = async () => {
-  //   await supabase.auth.signOut();
-  //   window.location.href = '/login';
-  // };
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -38,11 +27,14 @@ function AppLayout() {
         </div>
 
         <div className="nav-links">
-          <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             HOME
           </NavLink>
 
-          <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink
+            to="/dashboard"
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+          >
             DASHBOARD
           </NavLink>
 
@@ -62,6 +54,7 @@ function AppLayout() {
               LOGOUT
             </button>
           )}
+
         </div>
       </nav>
 

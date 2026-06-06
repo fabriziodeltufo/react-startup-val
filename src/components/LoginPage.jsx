@@ -130,7 +130,7 @@ function LoginPage() {
 
         {/* Telemetry readout below card */}
         <div className="login-telemetry">
-          <span>AUTH_ENDPOINT: /api/v1/login</span>
+          <span>AUTH_ENDPOINT: /login</span>
           <span>TIMESTAMP: {timestamp} UTC</span>
         </div>
       </main>
